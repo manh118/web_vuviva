@@ -1,0 +1,27 @@
+{
+  "name": "web_vuviva",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "manh",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/manh118/web_vuviva.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manh118/web_vuviva/issues"
+  },
+  "homepage": "https://github.com/manh118/web_vuviva#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
