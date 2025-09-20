@@ -1,0 +1,36 @@
+.wrap__footer{
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.footer{
+    height: 4.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copyright{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.4rem;
+}
+
+.footer__copyright i{
+    font-size: 1rem;
+}
+
+.social__list{
+    display: flex;
+    gap:7px
+}
+
+.social__item{
+    color: black;
+    font-size: 2rem;
+}
