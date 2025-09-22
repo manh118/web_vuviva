@@ -1,0 +1,65 @@
+// menu
+.works{
+    margin-bottom: 100px;
+}
+
+.works__menu{
+    margin-top: 20px;
+}
+
+.works .menu__list{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+
+}
+
+.menu__item a{
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.menu__item a:hover{
+    color: rgba(0,0,0,0.4);
+}
+
+//works
+.works__main{
+    margin-top: 55px;
+    width: 100%;
+}
+
+.works__list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+   gap: 70px;
+}
+
+.works__item{
+    text-align: center;
+}
+
+.works__img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.works__content{
+    margin-top: 10px;
+}
+
+.works__title,
+.works__desc{
+    font-size: 1.2rem;
+    color: black;
+}
+
+.works__title{
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);;
+}
+
+
+

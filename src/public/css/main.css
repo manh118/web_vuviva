@@ -9,7 +9,7 @@
 
 .swiper {
   width: 100%;
-  height: 500px;
+  height: 50vh;
   overflow: hidden;
   position: relative;
 }
@@ -158,6 +158,7 @@ table {
 html {
   font-size: 62.5%;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -169,14 +170,19 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .container {
   width: 1350px;
   max-width: calc(100% - 48px);
   margin: 0 auto;
 }
 
-.pd-48 {
+.pd-48-41 {
   padding-top: 4.8rem;
+  padding-bottom: 10rem;
 }
 
 .wrap__footer {
@@ -221,10 +227,6 @@ a {
   grid-template-columns: 3fr 9fr;
   height: 660px;
   gap: 7rem;
-}
-
-.portfolio {
-  height: 5000px;
 }
 
 .portfolio .section__heading {
@@ -321,9 +323,27 @@ a {
   grid-template-columns: 60% 40%;
 }
 
+.video_wrapper {
+  position: relative;
+  width: 85%;
+  padding-bottom: 47.8%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .portfolio .section3 .video_wrapper {
+    width: 100%; /* mobile vẫn full */
+    max-width: 480px; /* nhưng không vượt quá 480px */
+  }
+}
 .portfolio .section3 iframe {
-  width: 85.6%;
-  height: 50dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .portfolio .section3 .content {
@@ -353,7 +373,7 @@ a {
 
 .portfolio .section4__images {
   width: 100%;
-  height: 70vh;
+  height: 51.4rem;
   position: relative;
 }
 
@@ -380,6 +400,7 @@ a {
 
 .portfolio .section5 .content {
   position: relative;
+  right: 20px;
 }
 
 .portfolio .section5 .section__heading {
@@ -395,9 +416,308 @@ a {
 .portfolio .section5 .section__desc {
   margin-top: 2.6rem;
   word-spacing: 5px;
-  position: absolute;
-  right: 20px;
   width: 100%;
+}
+
+.works {
+  margin-bottom: 100px;
+}
+
+.works__menu {
+  margin-top: 20px;
+}
+
+.works .menu__list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.menu__item a {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.menu__item a:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.works__main {
+  margin-top: 55px;
+  width: 100%;
+}
+
+.works__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
+}
+
+.works__item {
+  text-align: center;
+}
+
+.works__img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.works__content {
+  margin-top: 10px;
+}
+
+.works__title,
+.works__desc {
+  font-size: 1.2rem;
+  color: black;
+}
+
+.works__title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Container mới, đây sẽ là khung định vị chính */
+.images-container {
+  position: relative;
+  width: 620px;
+  max-width: 100%;
+  margin: 100px auto 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.work__detail .images {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.work__detail .main__img {
+  width: 100%;
+  background-color: transparent;
+}
+
+.work__detail .main__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+  background-color: transparent;
+  object-fit: cover;
+}
+
+.work__detail .main__img img.fade-out {
+  opacity: 0;
+}
+
+.thumbnail-slider {
+  width: 100%;
+  margin-top: 50px;
+  position: static;
+}
+
+.thumbnail-slider .img__item {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  width: 100%;
+  background-color: transparent;
+}
+
+.thumbnail-slider .img__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.thumbnail-slider .img__item:hover img,
+.thumbnail-slider .swiper-slide-thumb-active .img__item img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.swiper-slide-thumb-active {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.images-container .custom-arrow {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  color: #222; /* Màu icon */
+  padding: 20px;
+}
+
+.images-container .custom-arrow::after {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.images-container .swiper-button-prev {
+  left: 10px;
+  top: 596px;
+}
+
+.images-container .swiper-button-next {
+  right: 10px;
+  top: 596px;
+}
+
+.work__detail_content {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.work__detail_content .title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.variation {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  gap: 10px;
+}
+
+.grid__wrapper div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tall__3 {
+  grid-row: span 3;
+}
+
+.tall__4 {
+  grid-row: span 4;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.big__2 {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.big__3 {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.anh10 {
+  position: relative;
+  top: -50px;
+}
+
+.anh36 {
+  position: relative;
+  right: -100px;
+  top: -50px;
+}
+
+.anh42 {
+  position: relative;
+  right: 250px;
+}
+
+.office {
+  margin-bottom: 100px;
+}
+
+.office__menu {
+  position: fixed;
+  top: 80px;
+  width: 1320px;
+  max-width: calc(100% - 48px);
+}
+
+.office .menu__list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.office__main {
+  margin-top: 50px;
+  width: 640px;
+  margin: 40px auto 0;
+}
+
+.vision__sentence {
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+  line-height: 1.95rem;
+}
+
+.vision .img {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.vision img {
+  width: 100%;
+}
+
+.contact {
+  margin-top: 100px;
+}
+
+.contact .vision__sentence {
+  padding-bottom: 2.4rem;
+}
+
+.wrapper__contact .title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+.wrapper__contact .desc {
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 2.4rem;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.vision__sentence:last-child {
+  margin-top: 120px;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 /*# sourceMappingURL=main.css.map */

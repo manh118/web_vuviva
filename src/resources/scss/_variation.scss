@@ -1,0 +1,69 @@
+.variation{
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.grid__wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+    gap: 10px;
+}
+
+// .grid__wrapper div{
+//     background-color: orange;
+// }
+
+.grid__wrapper div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tall__3{
+    grid-row: span 3;
+}
+
+.tall__4{
+    grid-row: span 4;
+}
+
+.wide{
+    grid-column: span 2;
+}
+
+.big{
+    grid-column: span 2;
+     grid-row: span 2;
+}
+
+.big__2{
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.big__3{
+     grid-column: span 3;
+    grid-row: span 3;
+}
+
+.transparent{
+    background-color: transparent;
+}
+
+.anh10{
+    position: relative;
+    top: -50px;
+}
+
+.anh36{
+    position: relative;
+    right: -100px;
+    top: -50px;
+}
+
+.anh42{
+    position: relative;
+    right: 250px;
+}

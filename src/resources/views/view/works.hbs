@@ -1,1 +1,30 @@
-port
+<div class="works">
+    <div class="works__menu">
+        <ul class="menu__list">
+            <li class="menu__item">
+                <a href="/works/category/all">all</a>
+            </li>
+            {{#each WorkCategories}}
+            <li class="menu__item">
+                <a href="/works/category/{{this.title}}">{{this.title}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="works__main">
+        <ul class="works__list">
+            {{#each Works}}
+            <li class="works__item">
+                <a href="/works/{{this._id}}">
+                    <img src="{{this.mainImage}}" alt="" class="works__img">
+                    <div class="works__content">
+                        <h4 class="works__title">{{this.title}}</h4>
+                        <span class="works__desc">{{this.sub_title}}</span>
+                    </div>
+                </a> 
+            </li>
+            {{/each}}
+            
+        </ul>
+    </div>
+</div>

@@ -4,15 +4,15 @@ const app = express()
 const morgan = require('morgan')
 const handel = require('express-handlebars').engine
 const route = require('./routes')
-
+const db = require('./config/db')
 // const MongoStore = require('connect-mongo');
-
 const port = 3000
 
+db.connect();
 
 // app.use(morgan('combined'))
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json())
 
 

@@ -1,0 +1,75 @@
+.office{
+    margin-bottom: 100px;
+}
+
+.office__menu{
+    position: fixed;
+    top: 80px;
+    width: 1320px;
+    max-width: calc(100% - 48px);
+}
+
+
+.office .menu__list{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.office__main{
+    margin-top: 50px;
+    width: 640px;
+    margin: 40px auto 0;
+}
+
+.vision__sentence{
+    font-size: 1.3rem;
+    margin-bottom: 1.6rem;
+    line-height: 1.95rem;
+}
+
+.vision .img{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.vision img{
+    width: 100%;
+}
+
+//team
+
+
+
+
+
+//contact\
+.contact{
+    margin-top: 100px;
+}
+
+.contact .vision__sentence{
+    padding-bottom: 2.4rem;
+}
+
+.wrapper__contact .title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+}
+
+.wrapper__contact .desc{
+    font-size: 1.3rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 2.4rem;
+    text-decoration: underline;
+    color: rgba(0,0,0,0.5);
+}
+
+.vision__sentence:last-child{
+    margin-top: 120px;
+}
+
+section {
+  scroll-margin-top: 80px;
+}

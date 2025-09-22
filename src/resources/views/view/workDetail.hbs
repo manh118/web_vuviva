@@ -1,0 +1,85 @@
+<div class="work__detail">
+    <div class="images-container"> 
+        <div class="images">
+            <div class="main__img">
+                <img src="{{WorkDetail.mainImage}}" alt="{{WorkDetail.title}}" id="mainImageDisplay"/>
+            </div>
+            <div class="thumbnail-slider swiper">
+                <div class="swiper-wrapper">
+                    {{#each WorkDetail.images}}
+                        <div class="swiper-slide">
+                            <div class="img__item">
+                                <img src="{{this}}" alt="" />
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next custom-arrow"></div>
+        <div class="swiper-button-prev custom-arrow"></div>
+
+    </div>
+    <div class="work__detail_content">
+        <h2 class="title">{{WorkDetail.title}}</h2>
+        <p class="desc">{{WorkDetail.description}}</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const mainImage = document.getElementById('mainImageDisplay');
+        
+        const thumbnailSwiper = new Swiper('.thumbnail-slider', {
+            spaceBetween: 15,
+            slidesPerView: 4,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            watchSlidesProgress: true,
+        });
+
+        const thumbSlides = document.querySelectorAll('.thumbnail-slider .swiper-slide');
+
+        function updateMainView(activeIndex) {
+            const activeSlide = thumbSlides[activeIndex];
+            if (!activeSlide) return;
+
+            thumbSlides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+            activeSlide.classList.add('swiper-slide-thumb-active');
+
+            const newImageSrc = activeSlide.querySelector('img').src;
+            if (mainImage.src !== newImageSrc) {
+                mainImage.classList.add('fade-out');
+                setTimeout(() => {
+                    mainImage.src = newImageSrc;
+                    mainImage.classList.remove('fade-out');
+                }, 100);
+            }
+        }
+
+        // 1. Lắng nghe sự kiện click vào thumbnail
+        thumbSlides.forEach((slide, index) => {
+            slide.addEventListener('click', function () {
+                // FIX LỖI CLICK: Cập nhật ảnh chính ngay lập tức
+                updateMainView(index); 
+               
+            });
+        });
+
+
+        // 3. Thiết lập trạng thái ban đầu khi tải trang
+        let initialIndex = 0;
+        thumbSlides.forEach((slide, index) => {
+            if (slide.querySelector('img').src === mainImage.src) {
+                initialIndex = index;
+            }
+        });
+        thumbnailSwiper.slideTo(initialIndex, 0);
+        updateMainView(initialIndex);
+    });
+</script>
